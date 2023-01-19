@@ -49,7 +49,7 @@ class TransaksiController extends Controller
         $get_stoks = Barang::select('stoks')->where('nama_barangs', $request->nama_barangs)->first();
         $total_harga = $request->total_barangs  * $find_barang->harga_barangs;
         $get_stoks;
-        if ( $request->total_barangs  <= $get_stoks ) {
+        if ( $request->total_barangs  <= $get_stoks ) { 
             if ($request->total_bayars < $total_harga) {
                 return redirect()->back()->with('error', 'Uang tidak cukup!');
             }else{
